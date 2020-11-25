@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webf", "webf\webf.csproj", "{D1D6D94F-7247-402B-9505-B5FA9F3714DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1D6D94F-7247-402B-9505-B5FA9F3714DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D6D94F-7247-402B-9505-B5FA9F3714DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D6D94F-7247-402B-9505-B5FA9F3714DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D6D94F-7247-402B-9505-B5FA9F3714DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AFA8299-33CD-40A0-A4AE-DFEA69BA803F}
+	EndGlobalSection
+EndGlobal

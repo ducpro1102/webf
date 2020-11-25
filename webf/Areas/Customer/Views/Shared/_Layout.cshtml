@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Shop a Ecommerce Category Flat Bootstarp Responsive Website Template| Parts :: w3layouts</title>
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (Bootstrap's JavaScript plugins) -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="~/Content/form.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Bike-shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- dropdown -->
+    <script src="~/Scripts/jquery.easydropdown.js"></script>
+    <link href="~/Content/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/Scripts/jqcommon.js"></script>
+    <script src="~/Scripts/jqHouse.js"></script>
+    <!--js-->
+
+</head>
+<body>
+    <!--banner-->
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <div class="banner-bg banner-sec">
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html"><img src="~/images/logo2.png" alt="" /></a>
+                </div>
+                <div class="top-nav">
+                    <label class="mobile_menu" for="mobile_menu">
+                        <span>Menu</span>
+                    </label>
+                    <input id="mobile_menu" type="checkbox">
+                    <ul class="nav">
+                        <li class="dropdown1">
+                            <a href="bicycles.html">Home Page</a>
+
+                        </li>
+                        <li class="dropdown1">
+                            <a href="parts.html">All House</a>
+
+                        </li>
+
+                        <li class="dropdown1">
+                            <a href="404.html">Category</a>
+                            <ul class="dropdown2">
+                                <li><a href="404.html">Rent</a></li>
+                                <li><a href="404.html">Buy</a></li>
+                                <li><a href="404.html">Sell</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown1">
+                            <a href="404.html">Join now</a>
+
+                        </li>
+                        <li class="dropdown1">
+                            <a href="/Customer/HomePage/Login">Login</a>
+
+                        </li>
+                        <a class="shop" href="cart.html"><img src="~/images/cart.png" alt="" /></a>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <!--/banner-->
+    <div class="footer">
+        <div class="container wrap">
+            <div class="logo2">
+                <a href="index.html"><img src="~/images/logo2.png" alt="" /></a>
+            </div>
+            <div class="ftr-menu">
+                <p>Developed by Tran Tuan Duc</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!---->
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "ViewDetailHouse";
+    Layout = "~/Areas/Customer/Views/Shared/_Layout.cshtml";
+}
+    <link href="~/Areas/Customer/Data/css/etalage.css" rel="stylesheet" />
+<div class="single-page" style="margin-bottom:200px">
+    <div class="product-head">
+        <a href="index.html">House</a> <span>::</span>
+    </div>
+    <!--Include the Etalage files-->
+    <!--//details-product-slider-->
+    <div class="details-left-slider">
+        <div class="grid images_3_of_2">
+            <ul id="etalage">
+                <li>
+                    <img class="etalage_thumb_image img-responsive" src="/images/m1.jpg"  />
+                    <img class="etalage_source_image img-responsive" src="/images/m1.jpg" title="" />
+                </li>
+                <li>
+                    <img class="etalage_thumb_image img-responsive" src="/images/m2.jpg" />
+                    <img class="etalage_source_image img-responsive" src="/images/m2.jpg"  title="" />
+                </li>
+                <li>
+                    <img class="etalage_thumb_image img-responsive" src="/images/m3.jpg" />
+                    <img class="etalage_source_image img-responsive" src="/images/m3.jpg"  />
+                </li>
+                <li>
+                    <img class="etalage_thumb_image img-responsive" src="/images/m4.jpg" />
+                    <img class="etalage_source_image img-responsive" src="/images/m4.jpg" />
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="details-left-info">
+        <h3 id="h_description"></h3>
+        <h4></h4>
+        <p><label>$</label> <p id="price"></p> <a href="#">Click for offer</a></p>
+        <p style="float:left" class="size">Price </p>
+        <p id="price"></p>
+        <div class="btn_form">
+            <a href="cart.html">Contact with owner</a>
+        </div>
+        <div class="bike-type">
+            <p>TYPE  ::<a href="#" id="">  </a></p>
+        </div>
+        <h5>Description  ::</h5>
+        <p class="desc" id="b_description">
+
+        </p>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script src="~/Areas/Customer/Data/js/jquery.etalage.min.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $('#etalage').etalage({ 
+            thumb_image_width: 400,
+            thumb_image_height: 400,
+            source_image_width: 800,
+            source_image_height: 1000,
+            show_hint: true,
+            click_callback: function (image_anchor, instance_id) {
+                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+            }
+        });
+        get_detail(localStorage.getItem('id_hou_con'));
+    });
+</script>
