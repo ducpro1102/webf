@@ -335,6 +335,7 @@
     <Content Include="Areas\Customer\Data\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Areas\Customer\Views\HomePage\ViewAllHouse.cshtml" />
     <Content Include="Areas\Customer\Views\HomePage\ViewDetailHouse.cshtml" />
+    <Content Include="Areas\Customer\Views\HomePage\AddHouse_2.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\easing.js" />

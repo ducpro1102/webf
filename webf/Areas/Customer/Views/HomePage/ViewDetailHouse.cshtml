@@ -54,6 +54,7 @@
 <script src="~/Areas/Customer/Data/js/jquery.etalage.min.js"></script>
 <script>
     jQuery(document).ready(function ($) {
+
         $('#etalage').etalage({ 
             thumb_image_width: 400,
             thumb_image_height: 400,
@@ -64,6 +65,9 @@
                 alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
             }
         });
-        get_detail(localStorage.getItem('id_hou_con'));
+
+        var hou_ID = getUrlParameter('hou_ID');
+        get_detail(hou_ID);
     });
+
 </script>

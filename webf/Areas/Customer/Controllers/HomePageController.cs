@@ -33,5 +33,9 @@ namespace webf.Areas.Customer.Controllers
         {
             return View();
         }
+        public ActionResult AddHouse_2()
+        {
+            return View();
+        }
     }
 }

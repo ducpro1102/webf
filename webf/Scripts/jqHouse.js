@@ -1,8 +1,5 @@
 ﻿function get_detail(id) {
-    if (id == null) {
-        alert('Please choose a house for view detail');
-        window.location.href = '/Customer/HomePage/ViewAllHouse';
-    } else {
+    
         $.ajax({
             url: "https://localhost:44320/api/House/GetHouse?hou_ID=" + id,
             success: function (result) {
@@ -10,7 +7,7 @@
                 localStorage.removeItem('id_hou_con');
             }
         }); 
-    }
+    
   
 }
 

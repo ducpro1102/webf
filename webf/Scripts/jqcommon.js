@@ -54,7 +54,7 @@ function listDataJson(p_name, p_dataJson) {
             "<div class='clearfix'></div>" +
             "</div>" +
             "<div class='fast-viw'>" +
-            "<a onclick='get_id(" + item.hou_ID +")' href='ViewDetailHouse'>Quick View</a>" +
+            "<a href='ViewDetailHouse?hou_ID=" + item.hou_ID  +"'>Quick View</a>" +
             "</div>" +
             "</div>" +
             "</a>";
@@ -84,3 +84,19 @@ function CallAjax(url, type, data, contentType = "application/json", callback = 
     }
     $.ajax(rq);
 }
+
+//lấy id theo url
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};

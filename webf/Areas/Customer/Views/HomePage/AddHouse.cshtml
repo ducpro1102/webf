@@ -6,43 +6,64 @@
 
 
     <div class="contact" style="margin-bottom: 50px">
-        <h2>Add House</h2>
+        <h2>Add a house in your list</h2>
         <div class="container">
-            <p>Add a house in your list</p>
+       
+            <h1>Choose your location</h1>
             <form>
-                <div style="float:left;">
-                    <label>Address</label>
-                    <input type="text" placeholder="NAME" required="">
+                <div style="margin-bottom:10px;">
+                    <div style="float:left;margin-right:35px;">
+                        <label>Province</label>
+                    </div>
+                    <div>
+                        <select id="province" style="width:180px"></select>
+                    </div>
                 </div>
-                <div>
-                    <label>Province</label>
-                    <select id="province" style="width:180px">
-                    </select>
-                </div>
-                <div>
-                    <label>District</label>
-                    <select id="district" style="width:180px">
-                    </select>
-                </div>
-                <div>
-                    <label>Ward</label>
-                    <select id="ward" style="width:180px">
-                    </select>
-                </div>
-                <div>
-                    <label>Street</label>
-                    <select id="street" style="width:180px">
-                    </select>
-                </div>
-                <div>
-                    <label>Area</label>
-                    <select id="area" style="width:180px">
-                    </select>
+                <div style="margin-bottom:10px;">
+                    <div style="float:left;margin-right:45px;">
+                        <label>District</label>
+                    </div>
+                    <div>
+                        <select id="district" style="width:180px"> </select>
+                    </div>
                 </div>
 
-                <input class="user" type="text" placeholder="USER@DOMAIN.COM" required=""><br>
-                <textarea placeholder="MESSAGE"></textarea>
-                <input type="submit" value="SEND">
+                <div style="margin-bottom:10px;">
+                    <div style="float:left;margin-right:59px;">
+                        <label>Ward</label>
+                    </div>
+                    <div>
+                        <select id="ward" style="width:180px"></select>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:10px;">
+                    <div style="float:left;margin-right:56px;">
+                        <label>Street</label>
+                    </div>
+                    <div>
+                        <select id="street" style="width:180px">
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <div style="float:left;margin-right:65px;">
+                        <label>Area</label>
+                    </div>
+                    <div>
+                        <select id="area" style="width:180px">
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <div style="float:left;margin-right:10px;">
+                        <label>Address Detail</label>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Address Detail" id="address_detail" required="" style="width:180px;">
+                    </div>
+                </div>
+                <input type="button" value="Next" id="btn_next_1" >
             </form>
         </div>
     </div>
@@ -57,7 +78,7 @@
             $.ajax({
                 url: "https://localhost:44320/api/Address/ViewProvince",
                 success: function (result) {
-                    CHUNG_GAN_DL_COMBO( 'province', '', result);
+                    CHUNG_GAN_DL_COMBO('province', '', result);
                 }
             });
             //View all district
@@ -114,7 +135,19 @@
                 }
             });
 
-          
+
+
+
+            $("#btn_next_1").unbind('click');
+            $("#btn_next_1").on('click', function () {
+                localStorage.setItem('province', $('#province').val());
+                localStorage.setItem('district', $('#district').val());
+                localStorage.setItem('ward', $('#ward').val());
+                localStorage.setItem('street', $('#street').val());
+                localStorage.setItem('area', $('#area').val());
+                localStorage.setItem('address_detail', $('#address_detail').val());
+                window.location.href = '/Home/Index';
+            });
           
         });
     </script>
