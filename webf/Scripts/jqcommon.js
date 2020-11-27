@@ -62,11 +62,6 @@ function listDataJson(p_name, p_dataJson) {
     });
     $("#" + p_name).html(temp.split("'").join(''));
 }
-
-function get_id(id) {
-
-    localStorage.setItem('id_hou_con',id);
-}
 //Ajax
 function CallAjax(url, type, data, contentType = "application/json", callback = undefined) {
     var rq = {
