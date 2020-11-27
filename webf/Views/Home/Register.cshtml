@@ -1,4 +1,8 @@
 ﻿
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="~/Areas/Customer/Dataimages/icons/favicon.ico" />
-   
+
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/Areas/Customer/Data/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -33,7 +37,7 @@
 
     <div class="limiter">
         <div class="container-login100" style="background-image: url('/Areas/Customer/Data/images/bg-01.jpg');">
-   
+
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
                     <span class="login100-form-logo">
@@ -41,7 +45,7 @@
                     </span>
 
                     <span class="login100-form-title p-b-34 p-t-27">
-                        Log in
+                        Register
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
@@ -54,25 +58,15 @@
                         <span class="focus-input100" data-placeholder="&#xf191;"></span>
                     </div>
 
-                    <div class="contact100-form-checkbox">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                        <label class="label-checkbox100" for="ckb1">
-                            Remember me
-                        </label>
-                    </div>
-
                     <div class="container-login100-form-btn">
-                        <a class="login100-form-btn" id="btnLogin">
-                            Login
+                        <a class="login100-form-btn" id="btnRegister">
+                            Confirm
                         </a>
                     </div>
 
                     <div class="text-center p-t-90">
-                        <a class="txt1" href="~/Areas/Customer/Data#" style="margin-right:50px">
-                            Forgot Password
-                        </a>
-                        <a class="txt1" href="~/Areas/Customer/Data#">
-                            Register
+                        <a class="txt1" href="~/Home/Login" style="margin-right:50px">
+                            Back to login
                         </a>
                     </div>
                 </form>
@@ -105,50 +99,17 @@
             dropdownParent: $('#dropDownSelect1')
         });
         $(document).ready(function () {
-            $("#register").on('click', function () {
+            $("#btnRegister").on('click', function () {
                 var data = { Email: $("#txtEmail").val().trim(), Password: $("#textPwd").val().trim(), ConfirmPassword: $("#txtConfirmPwd").val().trim() };
                 $.ajax({
                     url: "https://localhost:44320/api/Account/Register",
                     type: 'POST',
                     data: data,
                     success: function (resp) {
-                        window.location.href = '/Home/Index';
+                        window.location.href = '/Home/Login';
                     }
                 })
             });
-
-            $("#btnLogin").on('click', function () {
-                alert($("#loginUserName").val());
-                $.ajax(
-                    {
-                        url: "https://localhost:44320/token",
-                        type: "POST",
-                        data: $.param({ grant_type: 'password', username: $("#loginUserName").val(), password: $("#loginPwd").val() }),
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        success: function (resp) {
-                            alert("Đăng nhập thành công!");
-                            window.location.replace("https://localhost:44317/");
-                            sessionStorage.setItem('userName', resp.userName);
-                            sessionStorage.setItem('accessToken', resp.access_token);
-                            //var authHeaders = {};
-                            //authHeaders.Authorization = 'Bearer ' + resp.access_token;
-                            //$.ajax({
-                            //    url: "https://localhost:44320/api/SinhVien/getall2",
-                            //    type: "GET",
-                            //    headers: authHeaders,
-                            //    success: function (response) {
-                            //        console.log(response);
-                            //    }
-                            //});
-                        },
-                        error: function () {
-                            alert("Lỗi đăng nhập!");
-                        }
-                    });
-            });
-
-
-        });
     </script>
 </body>
 </html>
