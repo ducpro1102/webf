@@ -1,4 +1,8 @@
 ﻿
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="~/Areas/Customer/Dataimages/icons/favicon.ico" />
-   
+
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/Areas/Customer/Data/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -33,7 +37,7 @@
 
     <div class="limiter">
         <div class="container-login100" style="background-image: url('/Areas/Customer/Data/images/bg-01.jpg');">
-   
+
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
                     <span class="login100-form-logo">
@@ -68,10 +72,10 @@
                     </div>
 
                     <div class="text-center p-t-90">
-                        <a class="txt1" href="~/Areas/Customer/Data#" style="margin-right:50px">
+                        <a class="txt1" href="#" style="margin-right:50px">
                             Forgot Password
                         </a>
-                        <a class="txt1" href="~/Areas/Customer/Data#">
+                        <a class="txt1" href="~/Home/Register">
                             Register
                         </a>
                     </div>
@@ -105,18 +109,6 @@
             dropdownParent: $('#dropDownSelect1')
         });
         $(document).ready(function () {
-            $("#register").on('click', function () {
-                var data = { Email: $("#txtEmail").val().trim(), Password: $("#textPwd").val().trim(), ConfirmPassword: $("#txtConfirmPwd").val().trim() };
-                $.ajax({
-                    url: "https://localhost:44320/api/Account/Register",
-                    type: 'POST',
-                    data: data,
-                    success: function (resp) {
-                        window.location.href = '/Home/Index';
-                    }
-                })
-            });
-
             $("#btnLogin").on('click', function () {
                 alert($("#loginUserName").val());
                 $.ajax(
