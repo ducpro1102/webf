@@ -3,15 +3,96 @@
     ViewBag.Title = "AddHouse_2";
     Layout = "~/Areas/Customer/Views/Shared/_Layout.cshtml";
 }
+    <style>
+        .radio_cus {
+            float :left;
+            margin-right : 20px;
+        }
+        .xuong_dong{
+            margin-bottom:0px;
+        }
+        .label_cach{
+            float:left;
+            margin-right:10px;
+        }
+    </style>
 <div class="contact" style="margin-bottom: 50px">
     <h2>Add a house in your list</h2>
     <div class="container">
         <form action="/" method="post">
-            <input type="text" placeholder="NAME" required="">
-            <input type="text" placeholder="NAME" required="">
-            <input type="text" placeholder="NAME" required="">
-            <input type="text" placeholder="NAME" required="">
-            <input type="text" placeholder="NAME" required="">
+            <div class="xuong_dong">
+                <div class="label_cach">
+                    <label>Floor Area :</label>
+                </div>
+                <div>
+                    <input type="text" placeholder="m2" id="floor_area" required="" style="width:180px;"><label>m2</label>
+                </div>
+            </div>
+            <div class="xuong_dong">
+                <div class="label_cach"  style="width:170px">
+                    <label>Horizontal :</label>
+                    <input type="text" placeholder="m2" id="horizontal" required="" style="width:60px;"><label>m2</label>
+                </div>
+                <div style="width:170px;margin-left:170px;" >
+                        <label>Vertical :</label>
+                        <input type="text" placeholder="m2" id="vertical" required="" style="width:60px;"><label>m2</label>
+                </div>
+            </div>
+
+            <div class="xuong_dong">
+                <div class="label_cach" style="width:170px">
+                    <label>Number of bedroom :</label>
+                    <select id="nobedroom" >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>   <label>room</label>
+                </div>
+                <div >
+                    <div style="width:170px;margin-left:170px;">
+                        <label>Number of toilet :</label>
+                        <select id="notoilet">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select> <label>room</label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="xuong_dong">
+                <div class="label_cach">
+                    <label>Direction :</label>
+                </div>
+                <div>
+                    <div class="radio_cus">
+                        <input type="radio" id="north" name="direction" value="north">
+                        <label for="north">North</label><br>
+                    </div>
+                    <div class="radio_cus">
+                        <input type="radio" id="east" name="direction" value="east">
+                        <label for="east">East</label><br>
+                    </div>
+                    <div class="radio_cus">
+                        <input type="radio" id="west" name="direction" value="west">
+                        <label for="west">West</label><br>
+                    </div>
+                    <div class="radio_cus">
+                        <input type="radio" id="south" name="direction" value="south">
+                        <label for="south">South</label><br>
+                    </div>
+                </div>
+            </div>
         </form>
         
 
